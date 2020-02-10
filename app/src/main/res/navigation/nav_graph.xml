@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_posts">
+    <fragment
+        android:id="@+id/fragment_posts"
+        android:name="kg.mirlan.testlifehacker.ui.posts.PostsFragment"
+        tools:layout="@layout/fragment_posts">
+
+        <action
+            android:id="@+id/action_posts_screen_to_detail_screen"
+            app:destination="@id/screen_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/screen_detail"
+        android:name="kg.mirlan.testlifehacker.ui.detail.PostFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="postTitle"
+            android:defaultValue="title"
+            app:argType="string"/>
+        <argument
+            android:name="postContent"
+            app:argType="string"
+            />
+    </fragment>
+</navigation>
